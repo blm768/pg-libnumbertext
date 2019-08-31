@@ -55,7 +55,7 @@ extern "C" {
     numbertext(PG_FUNCTION_ARGS) {
         try {
             const text *number_text = PG_GETARG_TEXT_P(0);
-            const text *language_text = PG_GETARG_TEXT_P(0);
+            const text *language_text = PG_GETARG_TEXT_P(1);
             // TODO: make sure we're dealing with Unicode.
             std::string number_str = text_to_string(number_text);
             std::string language_str = text_to_string(language_text);
