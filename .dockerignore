@@ -1,0 +1,12 @@
+/.git
+/.vscode
+/libnumbertext-*/
+/results/
+
+/libnumbertext-*.tar.xz
+/regression.diffs
+/regression.out
+
+/**/*.bc
+/**/*.o
+/**/*.so

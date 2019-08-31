@@ -1,0 +1,6 @@
+/libnumbertext-*/
+/libnumbertext-*.tar.xz
+
+/**/*.bc
+/**/*.o
+/**/*.so

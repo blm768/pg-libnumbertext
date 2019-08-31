@@ -1,0 +1,28 @@
+{
+    "name": "pg_libnumbertext",
+    "abstract": "Converts numbers to words in a variety of languages",
+    "version": "0.1.0",
+    "maintainer": "Benjamin L. Merritt <blm768@gmail.com>",
+    "license": ["bsd", "lgpl_3_0"],
+    "provides": {
+      "pg_libnumbertext": {
+         "abstract": "Converts numbers to words in a variety of languages",
+         "file": "pg_libnumbertext--0.1.0.sql",
+         "version": "0.1.0"
+      }
+    },
+    "resources": {
+      "bugtracker": {
+         "web": "http://github.com/blm768/pg-libnumbertext/issues/"
+      },
+      "repository": {
+        "url":  "git://github.com/blm768/pg-libnumbertext.git",
+        "web":  "http://github.com/blm768/pg-libnumbertext/",
+        "type": "git"
+      }
+   },
+    "meta-spec": {
+       "version": "1.0.0",
+       "url": "http://pgxn.org/meta/spec.txt"
+    }
+}
