@@ -17,8 +17,8 @@ namespace {
         char share_path[MAXPGPATH];
         get_share_path(my_exec_path, share_path);
         static char extension_path[MAXPGPATH];
-        join_path_components(extension_path, share_path, "extension/");
-        return extension_path; // TODO: make a subdirectory or something...
+        join_path_components(extension_path, share_path, "extension/pg_libnumbertext_data/");
+        return extension_path;
     }
 
     Numbertext &numbertext_instance() {
