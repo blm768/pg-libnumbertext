@@ -1,6 +1,21 @@
 CREATE EXTENSION IF NOT EXISTS pg_libnumbertext;
-
 SELECT numbertext('1', 'en');
+ numbertext 
+------------
+ one
+(1 row)
+
 SELECT numbertext('3', 'ja');
+ numbertext 
+------------
+ 三
+(1 row)
+
 SELECT numbertext('not a number', 'en');
+ numbertext 
+------------
+ 
+(1 row)
+
 SELECT numbertext('1', 'not a language');
+ERROR:  Failed to load Soros code for language "not a language"
