@@ -6,6 +6,10 @@ This PosgreSQL extension provides bindings to [`libnumbertext`](https://github.c
 
 This project is in an early alpha state, but the basic functionality seems to be operational.
 
+## License
+
+The `libnumbertext` library itself is dual-licensed under a BSD 3-clause license and the LGPL version 3. This bindings themselves are licensed under a 3-clause BSD license.
+
 ## Building
 
 Download the source for the appropriate [release](https://github.com/Numbertext/libnumbertext/releases) of `libnumbertext` (in `tar.xz` format) and place it in the root of the repository. Then run `make` and `make install`.
