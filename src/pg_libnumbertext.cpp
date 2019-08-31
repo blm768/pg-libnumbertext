@@ -10,6 +10,8 @@ extern "C" {
 
 #include "Numbertext.hxx"
 
+#include "error_handling.h"
+
 namespace {
     const char* data_path() {
         char share_path[MAXPGPATH];
@@ -59,14 +61,18 @@ extern "C" {
             // TODO: make sure we're dealing with Unicode.
             std::string number_str = text_to_string(number_text);
             std::string language_str = text_to_string(language_text);
-            if (numbertext_instance().numbertext(number_str, language_str))
+            if (numbertext_instance().numbertext(number_str, language_str)) {
                 PG_RETURN_TEXT_P(string_to_text(number_str));
-            else
-                //PG_RETURN_NULL(); // TODO: report error.
-                PG_RETURN_TEXT_P(string_to_text("failed"));
+            }
+            else {
+                ereport(ERROR, (
+                    errcode(ERRCODE_EXTERNAL_ROUTINE_EXCEPTION),
+                    errmsg("Failed to load Soros code for language \"%s\"", language_str.c_str())
+                ));
+                PG_RETURN_NULL();
+            }
         } catch (std::exception& e) {
-            // TODO: exception handling
-            //reportException(e);
+            report_exception(e);
             PG_RETURN_NULL();
         }
     }
